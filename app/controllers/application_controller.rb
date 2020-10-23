@@ -9,6 +9,11 @@ class ApplicationController < Sinatra::Base
     set :sessions_secret, "321864651321651216541641321"
   end
 
+
+    get "/" do
+        erb :welcome
+    end
+
   helpers do
     def logged_in?
       !!session[:user_id]
@@ -25,8 +30,6 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-  get "/" do
-    erb :welcome
-  end
+  
 
 end
