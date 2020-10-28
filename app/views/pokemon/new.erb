@@ -1,0 +1,21 @@
+<h2>Catch a Pokemon in the tall grass<a href='/pokemon'>pokemon</a></h2>
+
+<% if !!@messages %>
+<p class="failed"><%= @messages %></p>
+<% end %>
+
+<form action='/pokemon' method='post'>
+
+  <label for=name>Name: </label>
+  <input id=name type=text name=name><br>
+
+  <label for=nickname>Nick Name: </label>
+  <input id=nickname type=text name=nickname><br>
+
+  <label for=types>Type: </label>
+  <input id=types type=text name=types><br>
+  
+  <input type=submit value="Catch">
+
+
+</form>
