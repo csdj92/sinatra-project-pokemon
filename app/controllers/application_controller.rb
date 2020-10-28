@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
 
 
     get "/" do
-        erb :welcome
+       redirect '/login'
     end
 
   helpers do
