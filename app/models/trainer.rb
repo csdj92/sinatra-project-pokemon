@@ -2,15 +2,9 @@ class Trainer < ActiveRecord::Base
     has_secure_password   
     has_many :pokemon
     #has_many :types, through: :pokemon
-    validates :username, :email, :password, presence: true
+    validates :trainer_name, :email, :password, presence: true
+    validates :password, length: { minimum: 5 }, confirmation: true, 
+      unless: Proc.new { |t| t.password.blank? }
 
-    def slug
-        self.username.downcase.gsub(" ","-")        
-    end
-
-    def self.find_by_slug(slug)
-        self.all.find do |i|
-            i.slug
-        end
-    end
+    
 end
