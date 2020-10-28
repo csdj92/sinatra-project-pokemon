@@ -52,7 +52,7 @@ class PokemonController < ApplicationController
                 @pokemon.types = params[:types]
               end
       
-              if @pokemon.valid?
+              if @pokemon.valid?              
                 @pokemon.save
                 redirect "pokemon/#{@pokemon.id}"
               else                
