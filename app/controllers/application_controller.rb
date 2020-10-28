@@ -20,16 +20,8 @@ class ApplicationController < Sinatra::Base
     end
   end
     
-    def current_user
-      Trainer.find_by(session[:user_id])
-    end
-
-    def authenticate      
-      if !logged_in?
-        redirect '/login'
-      end
-    end
-
-  
+  def current_user
+    Trainer.find_by_id(session[:user_id])
+  end  
 
 end
